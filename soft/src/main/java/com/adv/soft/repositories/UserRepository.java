@@ -1,10 +1,10 @@
-package com.adv.soft.repository;
+package com.adv.soft.repositories;
+
+import com.adv.soft.models.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import com.adv.soft.model.User;
 
 //I should be able to define different queries to present whatever
 //Find all users. Find all students.

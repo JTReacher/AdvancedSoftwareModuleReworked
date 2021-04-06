@@ -1,7 +1,7 @@
-package com.adv.soft.service;
+package com.adv.soft.services;
 
-import com.adv.soft.model.User;
-import com.adv.soft.repository.UserRepository;
+import com.adv.soft.models.User;
+import com.adv.soft.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

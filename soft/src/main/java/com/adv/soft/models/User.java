@@ -1,4 +1,4 @@
-package com.adv.soft.model;
+package com.adv.soft.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

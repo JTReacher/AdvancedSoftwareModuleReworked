@@ -1,13 +1,15 @@
-package com.adv.soft.service;
+package com.adv.soft.services;
 
 import java.util.Collection;
 import java.util.List;
 
-import com.adv.soft.model.User;
+import com.adv.soft.interfaces.UserService;
+import com.adv.soft.models.User;
 
 import org.springframework.data.domain.Page;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class UserServiceImpl implements UserService, UserDetails {
 
@@ -81,5 +83,11 @@ public class UserServiceImpl implements UserService, UserDetails {
         // TODO Auto-generated method stub
         return null;
     }
-    
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }
