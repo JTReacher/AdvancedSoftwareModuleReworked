@@ -3,15 +3,15 @@ package com.adv.soft.services;
 import java.util.Collection;
 import java.util.List;
 
-import com.adv.soft.interfaces.UserService;
-import com.adv.soft.models.User;
+/* import com.adv.soft.interfaces.UserService;
+ */import com.adv.soft.models.User;
 
 import org.springframework.data.domain.Page;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-public class UserServiceImpl implements UserService, UserDetails {
+public class UserServiceImpl implements /* UserService, */ UserDetails {
 
     private User user;
 
@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService, UserDetails {
         return true;
     }
 
-    @Override
+   /*  @Override
     public List<User> getAllUsers() {
         // TODO Auto-generated method stub
         return null;
@@ -88,6 +88,10 @@ public class UserServiceImpl implements UserService, UserDetails {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // TODO Auto-generated method stub
         return null;
+    } */
+
+    public String getFullName() {
+        return user.getFirstName() + " " + user.getLastName();
     }
 
 }

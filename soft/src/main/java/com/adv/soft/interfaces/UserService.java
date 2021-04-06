@@ -1,5 +1,5 @@
 package com.adv.soft.interfaces;
-
+/* 
 
 import java.util.List;
 
@@ -27,4 +27,4 @@ public interface UserService {
     //IMPLEMENT THIS AND EXTEND THE AUTH CLASSES
 
     
-}
+} */
