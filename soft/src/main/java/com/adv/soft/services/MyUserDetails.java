@@ -52,8 +52,3 @@ public class MyUserDetails implements UserDetails {
     
     
 }
-
-
-
-//Complete the addition of business logic for this object. i.e. How else do we need to pull out data?
-//By type for a start
