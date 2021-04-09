@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 //TODO: This is just a DAO. It exists purely to supply user data to the rest of the framework
 //In this case it just underpins user auth
+//This abstracs user auth and gets it out of the way
 
 @Service
 public class MyUserDetailsService implements UserDetailsService {
