@@ -11,6 +11,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+//TODO: THIS CLASS APPEARS TO REPRESENT AN AUTHORISATION USER I.E. MORE LIKE A MODEL
+//Yes, this is a model not a service as it represents an authenticated user object. Fix structure
+
 public class UserServiceImpl implements /* UserService, */ UserDetails {
 
     private User user;
@@ -54,6 +57,8 @@ public class UserServiceImpl implements /* UserService, */ UserDetails {
         return true;
     }
 
+    //TODO:
+    //Reasonably certain this functionality needs to be in DetailsService as DAO
    /*  @Override
     public List<User> getAllUsers() {
         // TODO Auto-generated method stub

@@ -31,23 +31,17 @@ public class User {
     @Column(name = "last_name", nullable = false, length = 20)
     private String lastName;
 
-    @NotBlank(message = "")
     @Column
     private String industry;
 
-    @NotBlank(message = "")
     @Column
     private String about;
 
     @Column
     private String skills;
 
-    
-    @NotBlank(message = "Please classify yourself as either student or employer")
     @Column
-    private String userType;
-
-
+    private String type;
 
 
     public Long getId() {
@@ -111,15 +105,15 @@ public class User {
     }
 
     public void setSkills(String skills) {
-        this.skills= skills;
+        this.skills = skills;
     }
 
-    public String getUserType() {
-        return userType;
+    public String getType() {
+        return type;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public void setType(String type) {
+        this.type = type;
     }
 
 }

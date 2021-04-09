@@ -18,7 +18,7 @@
 		</form>
 	</div>
 	<div>
-		<h1>List of Users</h1>
+		<h1>List of Students</h1>
 	</div>
 	
 	<div>
@@ -36,7 +36,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="user: ${listUsers}">
+				<tr th:each="user: ${listStudents}">
 					<td th:text="${user.id}">User ID</td>
 					<td th:text="${user.email}">E-mail</td>
 					<td th:text="${user.firstName}">First Name</td>
@@ -53,3 +53,4 @@
 </div>
 </body>
 </html>
+

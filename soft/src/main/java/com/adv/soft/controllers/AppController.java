@@ -31,6 +31,7 @@ public class AppController {
         return "signup_form";
     }
 
+    //TODO: Why isn't this including userType?
     @PostMapping("/process_register")
     public String processRegister(User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -48,6 +49,14 @@ public class AppController {
         model.addAttribute("listUsers", listUsers);
 
         return "users";
+    }
+
+    @GetMapping("/students")
+    public String listStudents(Model model) {
+        List<User> listStudents = userRepository.findAllStudents();
+        model.addAttribute("listStudents", listStudents);
+
+        return "students";
     }
     
     

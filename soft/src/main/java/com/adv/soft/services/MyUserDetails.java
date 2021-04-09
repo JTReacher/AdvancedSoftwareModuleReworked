@@ -1,4 +1,5 @@
-package com.adv.soft.services;
+/* package com.adv.soft.services;
+
 
 import java.util.Collection;
 
@@ -52,3 +53,6 @@ public class MyUserDetails implements UserDetails {
     
     
 }
+ */
+
+ //This appears to clone the functionality in UserServiceImpl
