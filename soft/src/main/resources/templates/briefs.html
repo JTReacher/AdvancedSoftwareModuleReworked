@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>StudentSkillsPlatformTemplate</title>
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" th:href="@{/fonts/fontawesome-all.min.css} "/>
+    <link rel="stylesheet" th:href="@{/fonts/font-awesome.min.css} "/>
+    <link rel="stylesheet" th:href="@{/fonts/fontawesome5-overrides.min.css} "/>
+    <link rel="stylesheet" th:href="@{/css/Bootstrap-Chat.css} "/>
+    <link rel="stylesheet" th:href="@{/css/Footer-Basic.css} "/>
+    <link rel="stylesheet" th:href="@{/css/Login-Form-Clean.css} "/>
+    <link rel="stylesheet" th:href="@{/css/Profile-Edit-Form-1.css} "/>
+    <link rel="stylesheet" th:href="@{/css/Profile-Edit-Form.css} "/>
+    <link rel="stylesheet" th:href="@{/css/Search-Field-With-Icon.css} "/>
+    <link rel="stylesheet" th:href="@{/css/styles.css} "/>
+    <link rel="stylesheet" th:href="@{/css/Table-with-search-1-1.css} "/>
+    <link rel="stylesheet" th:href="@{/css/Table-with-search-1.css} "/>
+</head>
+
+<body>
+   <nav class="navbar navbar-dark navbar-expand-md">
+        <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav flex-grow-1 justify-content-between" style="color: #FFFFFF;">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/profile}"><i class="fa fa-user"></i>&nbsp;PROFILE</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/about}"><i class="far fa-comment-alt"></i>&nbsp;ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/briefs}"><i class="fa fa-search"></i>&nbsp;JOBS BOARD</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/settings}">&nbsp;<i class="fa fa-cog"></i>&nbsp;SETTINGS</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/students}"><i class="fas fa-graduation-cap"></i>&nbsp;STUDENTS</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/employers}"><i class="fas fa-briefcase"></i>&nbsp;EMPLOYERS</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/users}"><i class="fas fa-users"></i>&nbsp;USERS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript: document.logout.submit()"><i class="fa fa-sign-out"></i>&nbsp;</a></li>
+                </ul>
+                <form th:action="@{/logout}" method="post" th:hidden="true" name="logout">
+                <input type="submit" value="Logout" />
+		        </form>
+            </div>
+        </div>
+    </nav>
+    <h1>PLACEHOLDER</h1>
+    <!-- components go here in divs etc -->
+    <script th:src="@{/static/jquery/jquery.min.js}"></script>
+    <script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/js/Profile-Edit-Form.js}"></script>
+    <script th:src="@{/static/js/Table-with-search-1.js}"></script>
+</body>
+
+</html>
+
+
