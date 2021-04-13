@@ -18,6 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 //TODO: Revise your controllers and eliminate abstract business logic to the service layer
+//i.e rewire this to methods in the service layer rather than directly to repo
 
 @Controller
 public class UserControllers {
@@ -37,13 +38,9 @@ public class UserControllers {
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
-
         return "registerform";
     }
 
-    //TODO: Rectify this so that the controller isn't aware of the repo.
-    // Registers the user and exchanges with repository. Skips service layer.
-    //This feels like business logic to me
     @PostMapping("/process_register")
     public String processRegister(User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -52,12 +49,9 @@ public class UserControllers {
 
         userRepository.save(user);
 
-        return "register_success";
+        return "profile";
     }
 
-    //TODO: Fix
-    // Fetches list of users from repository. Skips service layer. Fine unless data
-    // is being manipulated.
     @GetMapping("/users")
     public String listUsers(Model model) {
         List<User> listUsers = userRepository.findAll();
@@ -66,7 +60,6 @@ public class UserControllers {
         return "users";
     }
 
-    //TODO: Fix
     // Fetches list of students from repository. Skips service layer.
     @GetMapping("/students")
     public String listStudents(Model model) {
@@ -82,7 +75,6 @@ public class UserControllers {
         return "about";
     }
     
-    // TODO: Fix
     @GetMapping("/employers")
     public String listEmployers(Model model) {
         List<User> listEmployers = userRepository.findAllEmployers();
@@ -91,11 +83,7 @@ public class UserControllers {
         return "employers";
     }
 
-    //TODO:
-    @GetMapping("/briefs")
-    public String viewBriefs() {
-        return "briefs";
-    }
+
 
     //TODO: Allows the user to reset their password by contacting admin or something
     @GetMapping("/forgot")
@@ -120,7 +108,7 @@ public class UserControllers {
 
 
    
-
+    //This probably should be in config not in my controllers page
     //TODO: Check me. This is the redirect to a custom login page.
     @Configuration
     public class MvcConfig implements WebMvcConfigurer {

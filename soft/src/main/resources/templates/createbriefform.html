@@ -39,8 +39,62 @@
             </div>
         </div>
     </nav>
-    <h1>PLACEHOLDER</h1>
-    <!-- components go here in divs etc -->
+    <!-- Replace this code with custom code when it's working -->
+    <div class="container text-center">
+		<div>
+			<h1>Create job brief</h1>
+		</div>
+		<form th:action="@{/processcreatebrief}" th:object="${brief}" 
+			method="post" style="max-width: 600px; margin: 0 auto;">
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">skills required: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{skillsRequired}" class="form-control" required />
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">jobDescription: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{jobDescription}" class="form-control" 
+							required minlength="6" maxlength="400"/>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Industry: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{industry}" class="form-control" 
+							required minlength="2" maxlength="20"/>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Pay GBP: </label>
+				<div class="col-8">
+					<input type="number" th:field="*{pay}" class="form-control" 
+							required minlength="2" maxlength="20" />
+				</div>
+			</div>
+
+			</div>
+            <!-- <div class="form-group row">
+				<label class="col-4 col-form-label">Start Date: </label>
+				<div class="col-8">
+					<input type="date" th:field="*{startDate}" class="form-control"/>
+				</div>
+			</div>
+            <div class="form-group row">
+				<label class="col-4 col-form-label">End Date: </label>
+				<div class="col-8">
+					<input type="date" th:field="*{endDate}" class="form-control"/>
+				</div>
+			</div> -->
+		</div>
+		</form>
+	</div>
+    <!-- to here -->
     <script th:src="@{/static/jquery/jquery.min.js}"></script>
     <script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
     <script th:src="@{/static/js/Profile-Edit-Form.js}"></script>
