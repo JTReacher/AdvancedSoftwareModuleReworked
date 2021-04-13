@@ -26,6 +26,7 @@ public class UserControllers {
     @Autowired
     private UserRepository userRepository;
 
+    //TODO: This doesn't appear to be used/necessary. Cleanup.
     @Autowired
     private MyUserDetailsService userDetails;
 

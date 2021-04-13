@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
@@ -22,24 +23,31 @@ public class User {
     @Column(nullable = false, unique = true, length = 45)
     private String email;
 
+    @NotBlank
     @Column(nullable = false, length = 64)
     private String password;
 
+    @NotBlank
     @Column(name = "first_name", nullable = false, length = 20)
     private String firstName;
 
+    @NotBlank
     @Column(name = "last_name", nullable = false, length = 20)
     private String lastName;
 
+    @NotBlank
     @Column
-    private String industry;
+    private Industry industry;
 
+    @NotBlank
     @Column
     private String about;
 
+    @NotBlank
     @Column
     private String skills;
 
+    @NotBlank
     @Column
     private String type;
 
@@ -84,11 +92,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getIndustry() {
+    public Industry getIndustry() {
         return industry;
     }
 
-    public void setIndustry(String industry) {
+    public void setIndustry(Industry industry) {
         this.industry = industry;
     }
 
