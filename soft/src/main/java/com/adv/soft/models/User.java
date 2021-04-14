@@ -8,8 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User { 
@@ -51,7 +57,7 @@ public class User {
     @Column
     private String type;
 
-
+/* 
     public Long getId() {
         return id;
     }
@@ -122,6 +128,6 @@ public class User {
 
     public void setType(String type) {
         this.type = type;
-    }
+    } */
 
 }

@@ -42,7 +42,7 @@
     <!-- Replace this code with custom code when it's working -->
     <div class="container text-center">
 		<div>
-			<h1>User Registration - Sign Up</h1>
+			<h2>Create User Profile</h2>
 		</div>
 		<form th:action="@{/process_register}" th:object="${user}" 
 			method="post" style="max-width: 600px; margin: 0 auto;">
@@ -77,13 +77,8 @@
 							required minlength="2" maxlength="20" />
 				</div>
 			</div>
-            <div class="form-group row">
-				<label class="col-4 col-form-label">Industry: </label>
-				<div class="col-8">
-					<input type="text" th:field="*{industry}" class="form-control" 
-							required minlength="2" maxlength="20" />
-				</div>
-			</div>
+			<!-- TODO: Change to industry autofill form -->
+            
             <div class="form-group row">
 				<label class="col-4 col-form-label">About: </label>
 				<div class="col-8">
@@ -96,6 +91,19 @@
 				<div class="col-8">
 					<input type="text" th:field="*{skills}" class="form-control" 
 							required minlength="2" maxlength="20" />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Industry: </label>
+					<div class="col-8">
+						<select class="form-control selectpicker" th:field="*{industry}" id="industry">
+						<option value="">No Selection</option>
+						<option th:each="industry : ${T(com.adv.soft.models.Industry).values()}"
+                                th:value="${industry}"
+                                th:text="${industry}">industry
+                        </option>
+					</select>
+					</div>
 				</div>
 			</div>
 			 <div class="form-group row">
@@ -118,6 +126,14 @@
 		</form>
 	</div>
     <!-- to here -->
+	<div>
+    <footer class="footer-basic" style="background: #2699FB;">
+        <ul class="list-inline" style="color: #FFFFFF;">
+            <li class="list-inline-item"><a th:href="@{/about}">About</a></li>
+            <li class="copyright" style="color: #FFFFFF;">Oxford Brookes © 2021 </li>
+        </ul>
+    </footer>
+</div>
     <script th:src="@{/static/jquery/jquery.min.js}"></script>
     <script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
     <script th:src="@{/static/js/Profile-Edit-Form.js}"></script>

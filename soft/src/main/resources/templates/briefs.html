@@ -1,78 +1,155 @@
 <!DOCTYPE html>
 <html xmlns:th="http:/www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>StudentSkillsPlatformTemplate</title>
-    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} "/>
-    <link rel="stylesheet" th:href="@{/fonts/fontawesome-all.min.css} "/>
-    <link rel="stylesheet" th:href="@{/fonts/font-awesome.min.css} "/>
-    <link rel="stylesheet" th:href="@{/fonts/fontawesome5-overrides.min.css} "/>
-    <link rel="stylesheet" th:href="@{/css/Bootstrap-Chat.css} "/>
-    <link rel="stylesheet" th:href="@{/css/Footer-Basic.css} "/>
-    <link rel="stylesheet" th:href="@{/css/Login-Form-Clean.css} "/>
-    <link rel="stylesheet" th:href="@{/css/Profile-Edit-Form-1.css} "/>
-    <link rel="stylesheet" th:href="@{/css/Profile-Edit-Form.css} "/>
-    <link rel="stylesheet" th:href="@{/css/Search-Field-With-Icon.css} "/>
-    <link rel="stylesheet" th:href="@{/css/styles.css} "/>
-    <link rel="stylesheet" th:href="@{/css/Table-with-search-1-1.css} "/>
-    <link rel="stylesheet" th:href="@{/css/Table-with-search-1.css} "/>
-</head>
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} " />
+    <link rel="stylesheet" th:href="@{/fonts/fontawesome-all.min.css} " />
+    <link rel="stylesheet" th:href="@{/fonts/font-awesome.min.css} " />
+    <link
+      rel="stylesheet"
+      th:href="@{/fonts/fontawesome5-overrides.min.css} "
+    />
+    <link rel="stylesheet" th:href="@{/css/Bootstrap-Chat.css} " />
+    <link rel="stylesheet" th:href="@{/css/Footer-Basic.css} " />
+    <link rel="stylesheet" th:href="@{/css/Login-Form-Clean.css} " />
+    <link rel="stylesheet" th:href="@{/css/Profile-Edit-Form-1.css} " />
+    <link rel="stylesheet" th:href="@{/css/Profile-Edit-Form.css} " />
+    <link rel="stylesheet" th:href="@{/css/Search-Field-With-Icon.css} " />
+    <link rel="stylesheet" th:href="@{/css/styles.css} " />
+    <link rel="stylesheet" th:href="@{/css/Table-with-search-1-1.css} " />
+    <link rel="stylesheet" th:href="@{/css/Table-with-search-1.css} " />
+  </head>
 
-<body>
-   <nav class="navbar navbar-dark navbar-expand-md">
-        <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav flex-grow-1 justify-content-between" style="color: #FFFFFF;">
-                    <li class="nav-item"><a class="nav-link" th:href="@{/profile}"><i class="fa fa-user"></i>&nbsp;PROFILE</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/about}"><i class="far fa-comment-alt"></i>&nbsp;ABOUT</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/briefs}"><i class="fa fa-search"></i>&nbsp;JOBS BOARD</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/settings}">&nbsp;<i class="fa fa-cog"></i>&nbsp;SETTINGS</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/students}"><i class="fas fa-graduation-cap"></i>&nbsp;STUDENTS</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/employers}"><i class="fas fa-briefcase"></i>&nbsp;EMPLOYERS</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/users}"><i class="fas fa-users"></i>&nbsp;USERS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="javascript: document.logout.submit()"><i class="fa fa-sign-out"></i>&nbsp;</a></li>
-                </ul>
-                <form th:action="@{/logout}" method="post" th:hidden="true" name="logout">
-                <input type="submit" value="Logout" />
-		        </form>
-            </div>
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-md">
+      <div class="container-fluid">
+        <button
+          data-toggle="collapse"
+          class="navbar-toggler"
+          data-target="#navcol-1"
+        >
+          <span class="sr-only">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul
+            class="navbar-nav flex-grow-1 justify-content-between"
+            style="color: #ffffff"
+          >
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/profile}"
+                ><i class="fa fa-user"></i>&nbsp;PROFILE</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/about}"
+                ><i class="far fa-comment-alt"></i>&nbsp;ABOUT</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/briefs}"
+                ><i class="fa fa-search"></i>&nbsp;JOBS BOARD</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/settings}"
+                >&nbsp;<i class="fa fa-cog"></i>&nbsp;SETTINGS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/students}"
+                ><i class="fas fa-graduation-cap"></i>&nbsp;STUDENTS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/employers}"
+                ><i class="fas fa-briefcase"></i>&nbsp;EMPLOYERS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/users}"
+                ><i class="fas fa-users"></i>&nbsp;USERS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript: document.logout.submit()"
+                ><i class="fa fa-sign-out"></i>&nbsp;</a
+              >
+            </li>
+          </ul>
+          <form
+            th:action="@{/logout}"
+            method="post"
+            th:hidden="true"
+            name="logout"
+          >
+                 <input type="submit" value="Logout" />
+          </form>
         </div>
+      </div>
     </nav>
     <h1><a class="forgot" th:href="@{/createbrief}">Create brief</a></h1>
-   <!-- Change from here -->
+    <!-- start of table container -->
     <div class="container text-center">
-	<div>
-		<table class="table table-striped table-bordered">
-			<thead class="thead-light">
-				<tr>
-					<th>Brief ID</th>
-					<th>Skills Required</th>
-					<th>Job Description</th>
+      <div>
+        <!--  image table align container-->
+        <div class="col-md-12" style="width: 100%">
+          <div class="row">
+            <div class="col-md-4">
+              <img
+                th:src="@{/img/girlwithletter.png}"
+                class="img-fluid pull-left pro-page-pro-image"
+              />
+            </div>
+            <div class="col-md-8">
+              <table
+                class="table table-responsive pull-right pro-page-contact-details-table"
+              >
+                <thead class="thead-light">
+                  <tr>
+                    <th>Brief ID</th>
+                    <th>Skills Required</th>
+                    <th>Job Description</th>
                     <th>Pay</th>
-					<th>Industry</th>
+                    <th>Industry</th>
                     <th>Creation Date</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="brief: ${listBriefs}">
-					<td th:text="${brief.id}">brief ID</td>
-					<td th:text="${brief.skillsRequired}">Skills Required</td>
-					<td th:text="${brief.jobDescription}">Job Description</td>
-					<td th:text="${brief.pay}">Pay</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="brief: ${listBriefs}">
+                    <td th:text="${brief.id}">brief ID</td>
+                    <td th:text="${brief.skillsRequired}">Skills Required</td>
+                    <td th:text="${brief.jobDescription}">Job Description</td>
+                    <td th:text="${brief.pay}">Pay</td>
                     <td th:text="${brief.industry}">Industry</td>
                     <td th:text="${brief.creationDate}">Creation Date</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of table container -->
+    <div>
+      <footer class="footer-basic" style="background: #2699fb">
+        <ul class="list-inline" style="color: #ffffff">
+          <li class="list-inline-item"><a th:href="@{/about}">About</a></li>
+          <li class="copyright" style="color: #ffffff">
+            Oxford Brookes © 2021
+          </li>
+        </ul>
+      </footer>
+    </div>
     <script th:src="@{/static/jquery/jquery.min.js}"></script>
     <script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
     <script th:src="@{/static/js/Profile-Edit-Form.js}"></script>
     <script th:src="@{/static/js/Table-with-search-1.js}"></script>
-</body>
-
+  </body>
 </html>
-
-

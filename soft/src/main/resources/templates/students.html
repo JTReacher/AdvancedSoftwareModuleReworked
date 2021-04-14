@@ -41,8 +41,18 @@
     </nav>
     <!-- Change from here -->
     <div class="container text-center">
-	<div>
-		<table class="table table-striped table-bordered">
+	<div class="col-md-12" style="width: 100%">
+        <div class="row">
+            <div class="col-md-4">
+              <img
+                th:src="@{/img/lampnman.png}"
+                class="img-fluid pull-left pro-page-pro-image"
+              />
+            </div>
+            <div class="col-md-8">
+              <table
+                class="table table-responsive pull-right pro-page-contact-details-table"
+              >
 			<thead class="thead-light">
 				<tr>
 					<th>User ID</th>
@@ -59,14 +69,22 @@
 					<td th:text="${user.email}">E-mail</td>
 					<td th:text="${user.firstName}">First Name</td>
 					<td th:text="${user.lastName}">Last Name</td>
-                    <td th:text="${user.industry}">Last Name</td>
-                    <td th:text="${user.skills}">Last Name</td>
+                    <td th:text="${user.industry}">Industry</td>
+                    <td th:text="${user.skills}">Skills</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 </div>
     <!-- to here. Testing only -->
+<div>
+    <footer class="footer-basic" style="background: #2699FB;">
+        <ul class="list-inline" style="color: #FFFFFF;">
+            <li class="list-inline-item"><a th:href="@{/about}">About</a></li>
+            <li class="copyright" style="color: #FFFFFF;">Oxford Brookes © 2021 </li>
+        </ul>
+    </footer>
+</div>
     <script th:src="@{/static/jquery/jquery.min.js}"></script>
     <script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
     <script th:src="@{/static/js/Profile-Edit-Form.js}"></script>
