@@ -1,5 +1,7 @@
 package com.adv.soft.controllers;
 
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+import java.security.Principal;
 import java.util.List;
 
 import com.adv.soft.models.User;
@@ -8,6 +10,8 @@ import com.adv.soft.services.MyUserDetailsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +26,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Controller
 public class UserControllers {
+
+    //TODO: Add security context for user based dynamic urls.
 
     @Autowired
     private UserRepository userRepository;
@@ -50,7 +56,7 @@ public class UserControllers {
 
         userRepository.save(user);
 
-        return "profile";
+        return "login";
     }
 
     @GetMapping("/users")
@@ -100,7 +106,8 @@ public class UserControllers {
     // TODO: returns profile of loggedin user
     @GetMapping("/profile")
     public String viewMyProfile() {
-        return "profile";
+
+        return "profile/username";
     }
 
     //TODO: returns profile of selected user

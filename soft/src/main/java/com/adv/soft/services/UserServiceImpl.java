@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
-//This is a custom service for user details usig the methods from my object model
+//This is a custom service for user details using the methods from my object model
 public class UserServiceImpl implements UserDetails {
 
     private User user;
@@ -54,8 +54,8 @@ public class UserServiceImpl implements UserDetails {
 
     public String getFullName() {
         return user.getFirstName() + " " + user.getLastName();
-    }
+}
 
-  
+
 
 }

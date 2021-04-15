@@ -52,7 +52,6 @@ public class User {
     @NotBlank
     @Column
     private Skill skill;
-    //TODO: change to skills object
 
     @NotBlank
     @Column

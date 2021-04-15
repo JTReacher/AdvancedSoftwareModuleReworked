@@ -45,11 +45,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.authenticationProvider(authenticationProvider());
 	}
 
-	@Override
+	//This is the original config that I'm changing, delete longer term
+	/* @Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 			.antMatchers("/users").authenticated()
-			.anyRequest().permitAll()
+			.anyRequest().permitAll() //This is permitting access to any other url without sign-in
 			.and()
 			.formLogin()
 				.loginPage("/login")
@@ -58,6 +59,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll()
 			.and()
 			.logout().logoutSuccessUrl("/").permitAll();
+	} */
+
+	//For the purposes of testing/building this allows access to all URL's
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests().anyRequest().permitAll();
 	}
-	
+
+	//TODO: This is the current production config that works
+	/* @Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests()
+			.antMatchers("/about", "/brief", "/briefs", "/createbriefform", "/employers", "/profile", "/registerform", "/settings", "/students", "/users").authenticated()
+			.anyRequest().permitAll() //This is permitting access to any other url without sign-in
+			.and()
+			.formLogin()
+				.loginPage("/login")
+				.usernameParameter("email")
+				.defaultSuccessUrl("/users")
+				.permitAll()
+			.and()
+			.logout().logoutSuccessUrl("/").permitAll();
+	} */
+
 }
