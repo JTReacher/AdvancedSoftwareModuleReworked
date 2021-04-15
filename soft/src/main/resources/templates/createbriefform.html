@@ -48,14 +48,20 @@
 			method="post" style="max-width: 600px; margin: 0 auto;">
 		<div class="m-3">
 			<div class="form-group row">
-				<label class="col-4 col-form-label">skills required: </label>
-				<div class="col-8">
-					<input type="text" th:field="*{skillsRequired}" class="form-control" required />
+				<label class="col-4 col-form-label">Skills: </label>
+					<div class="col-8">
+						<select class="form-control selectpicker" th:field="*{skill}" id="skill" multiple>
+						<option value="">No Selection</option>
+						<option th:each="skill : ${T(com.adv.soft.models.Skill).values()}"
+                                th:value="${skill}"
+                                th:text="${skill}">skill
+                        </option>
+					</select>
+					</div>
 				</div>
-			</div>
 			
 			<div class="form-group row">
-				<label class="col-4 col-form-label">jobDescription: </label>
+				<label class="col-4 col-form-label">Job Description: </label>
 				<div class="col-8">
 					<input type="text" th:field="*{jobDescription}" class="form-control" 
 							required minlength="6" maxlength="400"/>
@@ -64,11 +70,16 @@
 			
 			<div class="form-group row">
 				<label class="col-4 col-form-label">Industry: </label>
-				<div class="col-8">
-					<input type="text" th:field="*{industry}" class="form-control" 
-							required minlength="2" maxlength="20"/>
+					<div class="col-8">
+						<select class="form-control selectpicker" th:field="*{industry}" id="industry">
+						<option value="">No Selection</option>
+						<option th:each="industry : ${T(com.adv.soft.models.Industry).values()}"
+                                th:value="${industry}"
+                                th:text="${industry}">industry
+                        </option>
+					</select>
+					</div>
 				</div>
-			</div>
 			
 			<div class="form-group row">
 				<label class="col-4 col-form-label">Pay GBP: </label>

@@ -18,7 +18,7 @@ public class Brief {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id; // unique brief id
     private long companyId; // The company id that the creating user is linked to
-    private String skillsRequired; // The skills the company wants for this brief
+    private Skill skill; // The skills the company wants for this brief
     private String jobDescription; // Paragraph outlining job description
     private String industry; // Defined industry from the standard list
     private double pay; // Expected pay for this brief

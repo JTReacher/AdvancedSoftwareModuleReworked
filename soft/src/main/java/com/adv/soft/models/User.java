@@ -51,7 +51,8 @@ public class User {
 
     @NotBlank
     @Column
-    private String skills;
+    private Skill skill;
+    //TODO: change to skills object
 
     @NotBlank
     @Column

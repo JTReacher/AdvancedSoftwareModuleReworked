@@ -64,9 +64,8 @@ public class UserControllers {
     // Fetches list of students from repository. Skips service layer.
     @GetMapping("/students")
     public String listStudents(Model model) {
-        List<User> listStudents = userRepository.findAllStudents();
-        model.addAttribute("listStudents", listStudents);
-
+        List<User> listUsers = userRepository.findAllStudents();
+        model.addAttribute("listUsers", listUsers);
         return "students";
     }
 
@@ -78,9 +77,8 @@ public class UserControllers {
     
     @GetMapping("/employers")
     public String listEmployers(Model model) {
-        List<User> listEmployers = userRepository.findAllEmployers();
-        model.addAttribute("listEmployers", listEmployers);
-
+        List<User> listUsers = userRepository.findAllEmployers();
+        model.addAttribute("listUsers", listUsers);
         return "employers";
     }
 
