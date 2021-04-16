@@ -3,10 +3,16 @@ package com.adv.soft.controllers;
 import java.nio.file.attribute.UserDefinedFileAttributeView;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
+import javax.persistence.Id;
+import javax.validation.constraints.Email;
+
+import com.adv.soft.models.Industry;
 import com.adv.soft.models.User;
 import com.adv.soft.repositories.UserRepository;
 import com.adv.soft.services.MyUserDetailsService;
+import com.adv.soft.services.UserServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +22,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -103,15 +114,22 @@ public class UserControllers {
         return "settings";
     }
 
-    // TODO: returns profile of loggedin user
-    @GetMapping("/profile")
-    public String viewMyProfile() {
+    //This is the key
+    // TODO: returns profile of loggedin user. Might be problematic with thymeleaf special chararacters
+    /* @RequestMapping(value = "/profile{email}", method = RequestMethod.GET)
+    @ResponseBody
+    public User viewUserById(@PathVariable String email) {
 
-        return "profile/username";
-    }
 
-    //TODO: returns profile of selected user
+        return "profile";
+    } */
 
+    /* @GetMapping("/profile")
+    public String fetchProfile(Model model) {
+      
+        model.addAttribute("user", user);
+        return "profile";
+    } */
 
    
     //This probably should be in config not in my controllers page

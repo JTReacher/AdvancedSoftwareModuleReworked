@@ -62,13 +62,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	} */
 
 	//For the purposes of testing/building this allows access to all URL's
-	@Override
+	/* @Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().anyRequest().permitAll();
-	}
+	} */
 
 	//TODO: This is the current production config that works
-	/* @Override
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 			.antMatchers("/about", "/brief", "/briefs", "/createbriefform", "/employers", "/profile", "/registerform", "/settings", "/students", "/users").authenticated()
@@ -81,6 +81,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll()
 			.and()
 			.logout().logoutSuccessUrl("/").permitAll();
-	} */
+	} 
 
 }

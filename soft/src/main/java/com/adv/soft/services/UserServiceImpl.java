@@ -3,13 +3,18 @@ package com.adv.soft.services;
 import java.util.Collection;
 
 import com.adv.soft.models.User;
+import com.adv.soft.repositories.UserRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
 //This is a custom service for user details using the methods from my object model
 public class UserServiceImpl implements UserDetails {
+
+    @Autowired
+    private UserRepository userRepository;
 
     private User user;
 
@@ -56,6 +61,6 @@ public class UserServiceImpl implements UserDetails {
         return user.getFirstName() + " " + user.getLastName();
 }
 
-
+   
 
 }

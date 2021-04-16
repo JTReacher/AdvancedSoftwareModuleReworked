@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 //In this case it just underpins user auth
 //This abstracts user auth and gets it out of the way
 
+
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
@@ -32,6 +33,7 @@ public class MyUserDetailsService implements UserDetailsService {
         }
         return new UserServiceImpl(user);
     }
+
 
     //TODO: check this implementation works. Looks like this pulls all users but paginates it.
     //If it does, do away with the interface you were using.

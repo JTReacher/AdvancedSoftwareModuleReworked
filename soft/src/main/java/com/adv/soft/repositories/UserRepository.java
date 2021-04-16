@@ -2,6 +2,7 @@ package com.adv.soft.repositories;
 
 import com.adv.soft.models.User;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,5 +17,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("SELECT u from User u WHERE u.type = 'employer'")
     public List<User> findAllEmployers();
+
+    //TODO: added this, might be unnecessary
+    @Query("SELECT u from User u WHERE u.id = ?1")
+    public Optional<User> findById(Long id);
 
 }
